@@ -3,6 +3,7 @@
 //
 //   node tools/build-index.mjs                 # raw/ 의 파일로 data/tracks.json, data/index.json 생성
 //   node tools/build-index.mjs --lines         # + data/lines.json (단어가 나온 가사 줄 예시, 비공개 배포 전용!)
+//   node tools/build-index.mjs --lyrics        # + data/lyrics.json (인앱 재생 패널용 시간 가사 전체, 비공개 배포 전용!)
 //   node tools/build-index.mjs --find 歌う      # 이 단어가 어느 곡 어느 줄에서 잡혔는지 확인(검증용)
 //
 // 입력 (raw/ 폴더, git 에 올라가지 않음):
@@ -19,6 +20,7 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 && args
 const RAW = opt("--raw", "raw");
 const OUT = opt("--out", "data");
 const WITH_LINES = args.includes("--lines");
+const WITH_LYRICS = args.includes("--lyrics");
 const FIND = opt("--find", "");
 
 const readJSON = (f) => {
@@ -47,16 +49,18 @@ function isRomajiLRC(text) {
   if (L.length < 8) return false;
   return L.filter((x) => /[A-Za-z]{2,}/.test(x) && !/[぀-ヿ一-鿿]/.test(x)).length / L.length >= 0.8;
 }
-function linesOf(cand) {
+function timedOf(cand) {                       // [{t: 초|null, x: 가사 줄}]
   const raw = cand.l || cand.p || "";
   const out = [];
   for (const row of String(raw).split(/\r?\n/)) {
     const text = row.replace(/\[[^\]]*\]/g, "").trim();
     if (!text || VI_RE.test(text) || CREDIT_RE.test(text)) continue;
-    out.push(text);
+    const m = /^\s*\[(\d+):(\d+(?:\.\d+)?)\]/.exec(row);
+    out.push({ t: m ? Math.round((+m[1] * 60 + +m[2]) * 100) / 100 : null, x: text });
   }
   return out;
 }
+const linesOf = (cand) => timedOf(cand).map((o) => o.x);
 // 곡마다 후보 하나를 고른다: 싱크 가사(l) 우선, 로마자 표기본 제외. (사이트의 기본 선택과 같은 기준)
 function pickCandidate(entry) {
   const cands = (entry && entry.c) || [];
@@ -173,7 +177,8 @@ for (const item of library.items) {
       lyr: Boolean(cand),
     };
     trackBy.set(key, tracks.length);
-    tracks.push({ rec, lines: cand ? linesOf(cand) : [] });
+    const timed = cand ? timedOf(cand) : [];
+    tracks.push({ rec, timed, lines: timed.map((o) => o.x) });
   }
 }
 
@@ -201,16 +206,19 @@ const compiled = words.map((w) => ({ w, ...compileEntry(w) }));
 const normLines = tracks.map((t) => t.lines.map((l) => ({ raw: l, n: norm(l) })));
 const indexWords = {};
 const lineEx = {};
+const hitLines = {};                                   // 곡 번호 → { 단어 id: [가사 줄 번호…] }
 const findKey = FIND.normalize("NFKC");
 for (const c of compiled) {
   const hits = [];
   if (c.mode !== "skip") {
     tracks.forEach((tr, ti) => {
       let total = 0; const ex = [];
-      for (const L of normLines[ti]) {
+      const hl = [];
+      normLines[ti].forEach((L, li) => {
         const n = matchLine(L.n, c.patterns);
-        if (n) { total += n; if (ex.length < 2) ex.push(L.raw); }
-      }
+        if (n) { total += n; hl.push(li); if (ex.length < 2) ex.push(L.raw); }
+      });
+      if (total && WITH_LYRICS) ((hitLines[ti] ||= {})[c.w.id] = hl);
       if (total) {
         hits.push([ti, total]);
         if (WITH_LINES) (lineEx[c.w.id] ||= {})[ti] = ex;
@@ -229,6 +237,12 @@ fs.writeFileSync(path.join(OUT, "tracks.json"), JSON.stringify(tracks.map((t) =>
 fs.writeFileSync(path.join(OUT, "index.json"), JSON.stringify({ version: 1, built: new Date().toISOString().slice(0, 10), words: indexWords }));
 if (WITH_LINES) fs.writeFileSync(path.join(OUT, "lines.json"), JSON.stringify(lineEx));
 else if (fs.existsSync(path.join(OUT, "lines.json"))) fs.rmSync(path.join(OUT, "lines.json")); // 옵션 없이 빌드하면 남아 있던 가사 줄 파일을 지운다
+const lyFile = path.join(OUT, "lyrics.json");
+if (WITH_LYRICS) {
+  const ly = {};
+  tracks.forEach((t, ti) => { if (t.timed.length) ly[ti] = { l: t.timed.map((o) => [o.t, o.x]), h: hitLines[ti] || {} }; });
+  fs.writeFileSync(lyFile, JSON.stringify(ly));
+} else if (fs.existsSync(lyFile)) fs.rmSync(lyFile);
 if (!fs.existsSync(path.join(OUT, "views.json"))) fs.writeFileSync(path.join(OUT, "views.json"), JSON.stringify({ updated: null, views: {} }));
 
 const used = Object.values(indexWords).filter((x) => x.t.length).length;

@@ -13,7 +13,7 @@
 | `data/views.json` | 곡별 조회수 (처음엔 비어 있음 → 아래 "조회수") | O |
 | `tools/` | 데이터를 다시 만드는 스크립트 | O |
 | `raw/` | 가사 원본(`lyrics.json`)·`library.json` | **X** (`.gitignore`) |
-| `data/lines.json` | 단어가 나온 가사 줄 예시 (선택, 비공개 전용) | **X** |
+| `data/lyrics.json` | 인앱 재생 패널용 시간 가사 (선택, 비공개 배포 전용) | **X** (`.gitignore`) |
 
 ## 내 컴퓨터에서 미리보기
 
@@ -38,6 +38,15 @@ npm start            # http://localhost:8000 (파일을 더블클릭해서 열�
 4. **Actions 탭**에서 `deploy` 가 초록색으로 끝나면 `https://<아이디>.github.io/<저장소>/` 에서 열립니다.
 
 > Private 저장소의 Pages는 유료 플랜(Pro/Team)에서만 됩니다. 무료 계정이면 ① 저장소를 Public으로 하되 아래 "저작권" 조건을 지키거나, ② 기존처럼 Netlify에 `index.html` 등을 올리세요. 이 사이트는 폴더째 끌어다 놓는 방식으로도 그대로 동작합니다.
+
+## 인앱 재생 패널
+
+곡을 누르면 그 아래로 패널이 열려 왼쪽에 YouTube 영상(공식 임베드), 오른쪽에 시간에 맞춰 흐르는 가사가 나옵니다. 영상/가사 사이 세로 막대와 패널 아래 가로 막대를 끌어 크기를 바꿀 수 있고(마지막 크기는 브라우저에 저장), 가사 줄을 누르면 그 시간으로 이동합니다. 검색한 단어가 나온 줄은 강조되고, 그 시간으로 바로 가는 버튼이 영상 아래에 나옵니다. 가사가 영상보다 빠르거나 느리면 **싱크 −/＋** 로 0.5초씩 맞추며, 곡마다 브라우저에 기억합니다.
+
+- 가사는 `data/lyrics.json` 이 있어야 나옵니다. 없으면 영상만 재생합니다.
+- 만들기: `raw/` 에 `lyrics.json`, `library.json` 을 넣고 `npm run build:lyrics`. **가사 원문이 들어 있으니 비공개 배포에서만 쓰세요.**
+- 일부 영상은 소유자가 외부 재생을 막아 두어 "사이트 안에서 재생할 수 없어요"와 YouTube 링크가 나옵니다.
+- 영상 자동재생은 브라우저 정책에 따라 막힐 수 있습니다(그때는 영상의 ▶를 누르세요).
 
 ## 조회수 (YouTube API 키)
 
@@ -96,6 +105,6 @@ python3 tools/merge_words.py /tmp/words.json /tmp/extra.json data/words.json
 ## 저작권
 
 - 가사 원문은 이 저장소에 없습니다(`raw/`는 `.gitignore`). `data/index.json`에는 단어별 곡 번호와 횟수만 들어 있습니다.
-- `node tools/build-index.mjs --lines` 로 만드는 `data/lines.json` 은 가사 줄을 담으므로 **본인만 보는 비공개 배포에서만** 쓰세요. 기본적으로 `.gitignore`에 들어 있어 push 되지 않습니다.
+- `npm run build:lyrics` 로 만드는 `data/lyrics.json` 은 가사 전체를 담으므로 **본인만 보는 비공개 배포에서만** 쓰세요. 기본적으로 `.gitignore`에 들어 있어 `git push` 로는 올라가지 않습니다(웹에서 끌어다 놓으면 올라가니 주의).
 - `data/words.json` 은 교과서의 단어·뜻 목록입니다. 학습 목적의 개인·친구 사이 이용을 전제로 했고, 공개 저장소에 올리면 교과서 어휘 목록이 공개된다는 점을 알고 결정하세요.
 - 곡 썸네일은 YouTube 이미지 주소를 그대로 불러올 뿐 저장하지 않습니다.

@@ -3,7 +3,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const UNIT_TITLE = { 1: "どうぞ よろしく", 2: "おはなみは どう？", 3: "おちゃ どうぞ" };
 const UNIT_PAGES = { 1: "10–25쪽", 2: "26–41쪽", 3: "42–57쪽" };
 
-const state = { words: [], tracks: [], index: {}, views: {}, viewsUpdated: null, lines: null, built: "", unit: 0, tab: "search", sort: "views", wid: null, q: "" };
+const state = { words: [], tracks: [], index: {}, views: {}, viewsUpdated: null, lyrics: undefined, rows: [], built: "", unit: 0, tab: "search", sort: "views", wid: null, q: "" };
 
 // ---------- 데이터 ----------
 async function getJSON(url, optional = false) {
@@ -106,6 +106,7 @@ function renderSuggest(list) {
 
 // ---------- 화면: 결과 ----------
 function renderResult() {
+  closePanel(true);
   const box = $("#result"), empty = $("#empty");
   const w = state.words.find((x) => x.id === state.wid);
   if (!w) { box.hidden = true; empty.hidden = false; return; }
@@ -124,23 +125,191 @@ function renderResult() {
     const sort = hasViews ? state.sort : "count";
     const rows = ix.t.map(([ti, n]) => ({ ti, n, t: state.tracks[ti], v: viewsOf(state.tracks[ti]) }));
     rows.sort(sort === "views" ? (a, b) => (b.v ?? -1) - (a.v ?? -1) || b.n - a.n : (a, b) => b.n - a.n || (b.v ?? -1) - (a.v ?? -1));
-    const seg = hasViews ? `<div class="seg" role="group" aria-label="정렬"><button type="button" data-sort="views" class="${sort === "views" ? "on" : ""}">조회수순</button><button type="button" data-sort="count" class="${sort === "count" ? "on" : ""}">등장 횟수순</button></div>` : "";
-    body = rows.length
-      ? `<div class="sortbar"><span class="count"><b>${rows.length}</b>곡에 나와요</span>${seg}</div><ol class="songs">${rows.map((r, i) => songRow(r, i + 1, w.id)).join("")}</ol>`
+    const seg = hasViews ? `<div class="seg" id="seg" role="group" aria-label="정렬"><i></i><button type="button" data-sort="views" class="${sort === "views" ? "on" : ""}">조회수순</button><button type="button" data-sort="count" class="${sort === "count" ? "on" : ""}">등장 횟수순</button></div>` : "";
+    state.rows = ix.t.map(([ti, n]) => ({ ti, n, t: state.tracks[ti], v: viewsOf(state.tracks[ti]) }));
+    state.sortKey = sort;
+    body = state.rows.length
+      ? `<div class="sortbar"><span class="count"><b>${state.rows.length}</b>곡에 나와요</span>${seg}</div><ul class="songs" id="songList"></ul>`
       : `<p class="none">켄시·하치 노래 가사에서는 이 단어를 찾지 못했어요.</p>`;
   }
-  box.innerHTML = `<header class="wordhead"><div><span class="jp">${esc(w.w)}</span>${w.kanji ? `<span class="kanji">${esc(w.kanji)}</span>` : ""}</div><p class="ko">${esc(w.ko)}</p><div class="meta">${tags.join("")}</div>${alias}</header>${body}`;
+  closePanel(true);
+  box.innerHTML = `<header class="wordhead rise"><div><span class="jp">${esc(w.w)}</span>${w.kanji ? `<span class="kanji">${esc(w.kanji)}</span>` : ""}</div><p class="ko">${esc(w.ko)}</p><div class="meta">${tags.join("")}</div>${alias}</header>${body}`;
+  if ($("#songList")) { drawSongs(); placePill(); }
 }
-function songRow(r, rank, wid) {
-  const t = r.t, url = `https://www.youtube.com/watch?v=${encodeURIComponent(t.vid)}`;
+function drawSongs() {
+  const rows = [...state.rows];
+  rows.sort(state.sortKey === "views" ? (a, b) => (b.v ?? -1) - (a.v ?? -1) || b.n - a.n : (a, b) => b.n - a.n || (b.v ?? -1) - (a.v ?? -1));
+  closePanel(true);
+  $("#songList").innerHTML = rows.map((r, i) => songItem(r, i + 1, i)).join("");
+}
+function songItem(r, rank, i) {
+  const t = r.t;
   const year = t.album.date ? t.album.date.slice(0, 4) : "";
-  const ex = state.lines && state.lines[wid] && state.lines[wid][r.ti];
-  return `<li class="song"><div class="rank">${rank}</div>
-    <a class="thumb" href="${url}" target="_blank" rel="noopener" aria-label="${esc(t.title)} 듣기"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/${encodeURIComponent(t.vid)}/mqdefault.jpg"></a>
-    <div><h3><a href="${url}" target="_blank" rel="noopener">${esc(t.title)}</a></h3>
-      <div class="sub">${esc(t.album.title)} · ${KIND[t.album.kind] || ""}${year ? ` · ${year}` : ""}${t.artist !== "米津玄師" ? ` · ${esc(t.artist)}` : ""}</div>
-      <div class="nums"><span class="views">${r.v != null ? `조회수 <b title="${r.v.toLocaleString("ko-KR")}회">${fmtViews(r.v)}</b>` : `조회수 <b>—</b>`}</span><span>가사 속 <b>${r.n}</b>번</span></div>
-      ${ex && ex.length ? `<div class="lines">${ex.map(esc).join("<br>")}</div>` : ""}</div></li>`;
+  const thumb = t.vid ? `<img loading="lazy" alt="" src="https://i.ytimg.com/vi/${encodeURIComponent(t.vid)}/mqdefault.jpg">` : "";
+  return `<li class="item" style="--i:${Math.min(i, 12)}" data-ti="${r.ti}">
+    <button class="song" type="button" aria-expanded="false" aria-label="${esc(t.title)} 재생 패널 열기/닫기">
+      <span class="rank">${rank}</span><span class="thumb">${thumb}</span>
+      <span><h3>${esc(t.title)}</h3>
+        <div class="sub">${esc(t.album.title)} · ${KIND[t.album.kind] || ""}${year ? ` · ${year}` : ""}${t.artist !== "米津玄師" ? ` · ${esc(t.artist)}` : ""}</div>
+        <div class="nums"><span class="views">${r.v != null ? `조회수 <b title="${r.v.toLocaleString("ko-KR")}회">${fmtViews(r.v)}</b>` : `조회수 <b>—</b>`}</span><span>가사 속 <b>${r.n}</b>번</span></div></span>
+      <svg class="chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 8l5 5 5-5"/></svg>
+    </button>
+    <div class="drawer"><div class="clip"></div></div></li>`;
+}
+function placePill() {
+  const seg = $("#seg"); if (!seg) return;
+  const on = seg.querySelector("button.on"), pill = seg.querySelector("i");
+  if (!on || !pill) return;
+  pill.style.setProperty("--x", (on.offsetLeft - 3) + "px"); pill.style.setProperty("--w", on.offsetWidth + "px");
+}
+
+// ---------- 인앱 재생 패널 (YouTube 공식 임베드 + 시간 가사) ----------
+let cur = null;                                         // 열려 있는 패널의 상태
+let ytPromise = null;
+function loadYT() {
+  if (window.YT && window.YT.Player) return Promise.resolve();
+  return (ytPromise ||= new Promise((res, rej) => {
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => { if (prev) prev(); res(); };
+    const sc = document.createElement("script");
+    sc.src = "https://www.youtube.com/iframe_api"; sc.onerror = () => { ytPromise = null; rej(new Error("yt")); };
+    document.head.append(sc);
+  }));
+}
+async function ensureLyrics() {
+  if (state.lyrics === undefined) state.lyrics = await getJSON("data/lyrics.json", true);
+  return state.lyrics;
+}
+const fmtT = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+const offKey = (vid) => `kjw-off-${vid}`;
+function readOff(vid) { try { return parseFloat(localStorage.getItem(offKey(vid))) || 0; } catch { return 0; } }
+function saveOff(vid, v) { try { localStorage.setItem(offKey(vid), String(v)); } catch { /* 저장 못 해도 동작에는 문제 없음 */ } }
+
+function panelHTML(t, hasLyr) {
+  return `<div class="panel">
+    <button class="close" type="button" aria-label="닫기">✕</button>
+    <div class="vid"><div class="screen"><div class="mount"></div></div>
+      <div class="tools"><span class="hits"></span><span class="sync" title="가사가 영상보다 빠르거나 느리면 맞춰 주세요"><span>싱크</span><button type="button" data-off="-0.5" aria-label="가사 0.5초 일찍">−</button><b class="offv">0.0s</b><button type="button" data-off="0.5" aria-label="가사 0.5초 늦게">+</button></span></div></div>
+    <div class="grip" role="separator" aria-orientation="vertical" aria-label="영상 폭 조절"></div>
+    <div class="lyr"><div class="ly-lines"></div></div>
+    <div class="vgrip" role="separator" aria-orientation="horizontal" aria-label="패널 높이 조절"></div>
+  </div>`;
+}
+async function openPanel(item) {
+  if (cur && cur.item === item) return closePanel();
+  closePanel();
+  const ti = +item.dataset.ti, t = state.tracks[ti], wid = state.wid;
+  const c = { item, ti, vid: t.vid, k: -1, times: [], lines: [], off: readOff(t.vid), player: null, poll: null, dead: false };
+  cur = c;
+  const clip = $(".clip", item);
+  clip.innerHTML = panelHTML(t);
+  item.querySelector(".song").setAttribute("aria-expanded", "true");
+  void clip.offsetHeight;                               // 열리는 모션이 시작 상태에서 출발하도록
+  item.classList.add("open");
+  setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "nearest" }), 120);
+  $(".offv", clip).textContent = fmtOff(c.off);
+
+  // 가사
+  const ly = await ensureLyrics();
+  if (c.dead) return;
+  const box = $(".lyr", clip), linesEl = $(".ly-lines", clip);
+  const rec = ly && ly[ti];
+  if (!rec) {
+    box.classList.add("static");
+    box.insertAdjacentHTML("beforeend", `<div class="empty-note">${ly ? "이 곡은 가사 데이터가 없어요." : "가사 데이터(data/lyrics.json)가 없어서 영상만 재생합니다."}</div>`);
+  } else {
+    const hl = new Set((rec.h && rec.h[wid]) || []);
+    c.lines = rec.l;
+    const synced = rec.l.some((x) => x[0] != null);
+    c.times = synced ? rec.l.map((x) => x[0]) : [];
+    linesEl.innerHTML = rec.l.map((x, i) => `<button type="button" class="ln${hl.has(i) ? " hit" : ""}" data-i="${i}">${esc(x[1])}</button>`).join("");
+    if (!synced) box.classList.add("static");
+    const chips = [...hl].filter((i) => rec.l[i][0] != null).slice(0, 6).map((i) => `<button type="button" class="hit-btn" data-t="${rec.l[i][0]}">▶ ${fmtT(rec.l[i][0])}</button>`);
+    if (chips.length) $(".hits", clip).innerHTML = `<span>단어가 나오는 곳</span>${chips.join("")}`;
+    else if (hl.size) $(".hits", clip).textContent = "강조된 줄에 단어가 나와요";
+  }
+
+  // 영상
+  try {
+    await loadYT();
+    if (c.dead) return;
+    const opts = { videoId: t.vid, playerVars: { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1 }, host: "https://www.youtube-nocookie.com",
+      events: {
+        onReady: (e) => { try { e.target.playVideo(); } catch { /* 자동재생이 막히면 직접 ▶ */ } },
+        onStateChange: (e) => { if (e.data === 1) startPoll(c); else stopPoll(c); },
+        onError: () => showFail(c, "이 영상은 사이트 안에서 재생할 수 없어요."),
+      } };
+    if (location.protocol.startsWith("http")) opts.playerVars.origin = location.origin;
+    c.player = new YT.Player($(".mount", clip), opts);
+  } catch { showFail(c, "YouTube 플레이어를 불러오지 못했어요."); }
+}
+function showFail(c, msg) {
+  if (c.dead) return;
+  const scr = $(".screen", c.item); if (!scr) return;
+  scr.innerHTML = `<div class="fail"><span>${msg}</span><a href="https://www.youtube.com/watch?v=${encodeURIComponent(c.vid)}" target="_blank" rel="noopener">YouTube에서 열기 ↗</a></div>`;
+}
+const fmtOff = (v) => `${v > 0 ? "+" : ""}${v.toFixed(1)}s`;
+function startPoll(c) { stopPoll(c); c.poll = setInterval(() => tick(c), 200); tick(c); }
+function stopPoll(c) { if (c.poll) { clearInterval(c.poll); c.poll = null; } }
+function tick(c) {
+  if (c.dead || !c.player || !c.times.length || typeof c.player.getCurrentTime !== "function") return;
+  const t = c.player.getCurrentTime() - c.off;
+  let k = -1;
+  for (let i = 0; i < c.times.length; i++) { if (c.times[i] != null && c.times[i] <= t) k = i; else if (c.times[i] != null) break; }
+  if (k !== c.k) setLine(c, k);
+}
+function setLine(c, k) {
+  c.k = k;
+  const els = c.item.querySelectorAll(".ln");
+  els.forEach((e, j) => e.classList.toggle("now", j === k));
+  const el = els[k]; const lines = $(".ly-lines", c.item);
+  if (lines) lines.style.setProperty("--y", el ? (el.offsetTop + el.offsetHeight / 2) + "px" : "0px");
+}
+function closePanel(instant = false) {
+  const c = cur; if (!c) return;
+  cur = null; c.dead = true; stopPoll(c);
+  const { item } = c, clip = $(".clip", item);
+  try { c.player && c.player.destroy && c.player.destroy(); } catch { /* 이미 정리됨 */ }
+  const btn = item.querySelector(".song"); if (btn) btn.setAttribute("aria-expanded", "false");
+  item.classList.remove("open");
+  if (instant) { if (clip) clip.innerHTML = ""; }
+  else setTimeout(() => { if (!item.classList.contains("open") && clip) clip.innerHTML = ""; }, 760);
+}
+function wirePanel() {
+  const res = $("#result");
+  res.addEventListener("click", (e) => {
+    const item = e.target.closest(".item"); if (!item) return;
+    if (e.target.closest(".close")) return closePanel();
+    if (e.target.closest(".song")) return openPanel(item);
+    if (!cur || cur.item !== item) return;
+    const ln = e.target.closest(".ln"), hb = e.target.closest(".hit-btn"), ob = e.target.closest("[data-off]");
+    const seek = (sec) => { if (cur.player && cur.player.seekTo) { cur.player.seekTo(Math.max(0, sec + cur.off), true); cur.player.playVideo && cur.player.playVideo(); } };
+    if (ln && cur.times.length && cur.times[+ln.dataset.i] != null) seek(cur.times[+ln.dataset.i]);
+    else if (hb) seek(+hb.dataset.t);
+    else if (ob) { cur.off = Math.round((cur.off + +ob.dataset.off) * 10) / 10; saveOff(cur.vid, cur.off); $(".offv", item).textContent = fmtOff(cur.off); tick(cur); }
+  });
+  // 크기 조절: 가로(영상 폭) / 세로(패널 높이)
+  const root = document.documentElement;
+  try { const vw = localStorage.getItem("kjw-vw"), ph = localStorage.getItem("kjw-ph"); if (vw) root.style.setProperty("--vw", vw); if (ph) root.style.setProperty("--ph", ph); } catch { /* 무시 */ }
+  res.addEventListener("pointerdown", (e) => {
+    const h = e.target.closest(".grip, .vgrip"); if (!h) return;
+    const axis = h.classList.contains("grip") ? "x" : "y";
+    const panel = h.closest(".panel"), r = panel.getBoundingClientRect();
+    panel.classList.add("drag"); h.setPointerCapture(e.pointerId);
+    const mv = (ev) => {
+      if (axis === "x") root.style.setProperty("--vw", Math.min(70, Math.max(28, (ev.clientX - r.left) / r.width * 100)) + "%");
+      else root.style.setProperty("--ph", Math.min(620, Math.max(230, ev.clientY - r.top)) + "px");
+      if (cur) setLine(cur, cur.k);
+    };
+    const up = () => {
+      panel.classList.remove("drag"); h.removeEventListener("pointermove", mv); h.removeEventListener("pointerup", up);
+      try { localStorage.setItem("kjw-vw", root.style.getPropertyValue("--vw")); localStorage.setItem("kjw-ph", root.style.getPropertyValue("--ph")); } catch { /* 무시 */ }
+      if (cur) setLine(cur, cur.k);
+    };
+    h.addEventListener("pointermove", mv); h.addEventListener("pointerup", up);
+  });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && cur) closePanel(); });
+  addEventListener("resize", () => { placePill(); if (cur) setLine(cur, cur.k); });
 }
 
 // ---------- 화면: 단어장 ----------
@@ -193,7 +362,13 @@ function wire() {
   $("#searchForm").addEventListener("submit", (e) => { e.preventDefault(); onInput(); $("#q").blur(); });
   $("#suggest").addEventListener("click", (e) => { const b = e.target.closest("[data-w]"); if (b) select(b.dataset.w, { fill: false }); });
   $("#bookList").addEventListener("click", (e) => { const b = e.target.closest("[data-w]"); if (b) { state.q = ""; select(b.dataset.w); window.scrollTo({ top: 0, behavior: "smooth" }); } });
-  $("#result").addEventListener("click", (e) => { const b = e.target.closest("[data-sort]"); if (b) { state.sort = b.dataset.sort; renderResult(); } });
+  $("#result").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-sort]"); if (!b) return;
+    state.sort = state.sortKey = b.dataset.sort;
+    document.querySelectorAll("#seg button").forEach((x) => x.classList.toggle("on", x === b));
+    placePill(); drawSongs();
+  });
+  wirePanel();
   document.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tab)));
   document.querySelectorAll("[data-goto]").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.goto)));
   $("#unitChips").addEventListener("click", (e) => {
@@ -220,13 +395,13 @@ async function main() {
   }
   const v = await getJSON("data/views.json", true);
   if (v && v.views) { state.views = v.views; state.viewsUpdated = v.updated; }
-  state.lines = await getJSON("data/lines.json", true);
   if (!Object.keys(state.views).length) {
     const b = $("#banner"); b.hidden = false;
     b.textContent = "조회수 데이터가 아직 없어서 가사 속 등장 횟수순으로 보여줘요. (YouTube 조회수는 관리자가 갱신하면 나타납니다)";
   }
   $("#stamp").textContent = `곡 ${state.tracks.length}개 · 교과서 단어 ${state.words.length}개 · 색인 ${state.built}` + (state.viewsUpdated ? ` · 조회수 ${state.viewsUpdated.slice(0, 10)}` : "");
   wire();
+  document.fonts && document.fonts.ready.then(placePill);
   const p = new URLSearchParams(location.search), m = /w=(w\d+)/.exec(location.hash);
   if (m) select(m[1], { push: false });
   else if (p.get("q")) { $("#q").value = p.get("q"); onInput(); }

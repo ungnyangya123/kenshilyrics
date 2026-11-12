@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node tools/serve.mjs",
     "build": "node tools/build-index.mjs",
+    "build:lyrics": "node tools/build-index.mjs --lyrics",
     "views": "node tools/fetch-views.mjs"
   }
 }
