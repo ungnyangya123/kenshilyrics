@@ -7,6 +7,7 @@
 //   node tools/build-index.mjs --find 歌う      # 이 단어가 어느 곡 어느 줄에서 잡혔는지 확인(검증용)
 //
 // 입력 (raw/ 폴더, git 에 올라가지 않음):
+//   lyrics-offsets.json = (선택) 켄시 라이브러리의 data/lyrics-offsets.json  — 곡별 싱크 보정값
 //   lyrics.json  = 켄시 라이브러리의 data/lyrics.json   (곡마다 가사 후보 c:[{l|p, d, a, n}])
 //   library.json = 켄시 라이브러리의 data/library.json  (앨범·곡·YouTube 영상 ID)
 //
@@ -239,8 +240,43 @@ if (WITH_LINES) fs.writeFileSync(path.join(OUT, "lines.json"), JSON.stringify(li
 else if (fs.existsSync(path.join(OUT, "lines.json"))) fs.rmSync(path.join(OUT, "lines.json")); // 옵션 없이 빌드하면 남아 있던 가사 줄 파일을 지운다
 const lyFile = path.join(OUT, "lyrics.json");
 if (WITH_LYRICS) {
+  // 켄시 라이브러리와 같은 방식: 후보를 모두 담고(영상 길이로 사이트가 고름), 곡별 싱크 보정값(lyrics-offsets.json)을 함께 담는다.
+  const offFile = path.join(RAW, "lyrics-offsets.json");
+  const offsets = fs.existsSync(offFile) ? readJSON(offFile) : {};
+  if (!fs.existsSync(offFile)) console.log(`(참고) ${offFile} 가 없어 싱크 보정값 없이 만듭니다.`);
+  const parseLRC = (str) => {                                    // 켄시 라이브러리 main.js 의 parseLRC 와 같은 규칙
+    const out = [];
+    for (const row of String(str).split(/\r?\n/)) {
+      const m = [...row.matchAll(/\[(\d+):(\d+(?:\.\d+)?)\]/g)];
+      if (!m.length) continue;
+      const text = row.replace(/\[[^\]]*\]/g, "").trim();
+      if (VI_RE.test(text) || CREDIT_RE.test(text)) continue;
+      for (const x of m) out.push([Math.round((+x[1] * 60 + parseFloat(x[2])) * 100) / 100, text]);
+    }
+    return out.sort((a, b) => a[0] - b[0]);
+  };
   const ly = {};
-  tracks.forEach((t, ti) => { if (t.timed.length) ly[ti] = { l: t.timed.map((o) => [o.t, o.x]), h: hitLines[ti] || {} }; });
+  library.items.forEach((item) => item.tracks.forEach((t) => {
+    const key = `${item.id}|${t.n}`, ti = trackBy.get(key), entry = lyricsData[key];
+    const cands = ((entry && entry.c) || []).filter((c) => (c.l || c.p) && !isRomajiLRC(c.l || c.p));
+    const synced = cands.filter((c) => c.l), use = synced.length ? synced : cands.slice(0, 1);
+    if (!use.length) return;
+    const manual = use[0].a === "manual";
+    const off = key in offsets ? Number(offsets[key]) : manual ? 0 : Number(offsets.default);
+    const cs = use.map((c) => {
+      const lines = c.l ? parseLRC(c.l) : linesOf(c).map((x) => [null, x]);
+      const nl = lines.map((r) => norm(r[1]));
+      const h = {};
+      for (const cw of compiled) {
+        if (cw.mode === "skip") continue;
+        const hl = [];
+        nl.forEach((n, li) => { if (n && matchLine(n, cw.patterns)) hl.push(li); });
+        if (hl.length) h[cw.w.id] = hl;
+      }
+      return { d: c.d || 0, l: lines, h };
+    });
+    ly[ti] = { o: Number.isFinite(off) ? off : 0, c: cs };
+  }));
   fs.writeFileSync(lyFile, JSON.stringify(ly));
 } else if (fs.existsSync(lyFile)) fs.rmSync(lyFile);
 if (!fs.existsSync(path.join(OUT, "views.json"))) fs.writeFileSync(path.join(OUT, "views.json"), JSON.stringify({ updated: null, views: {} }));

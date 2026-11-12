@@ -181,15 +181,12 @@ async function ensureLyrics() {
   return state.lyrics;
 }
 const fmtT = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
-const offKey = (vid) => `kjw-off-${vid}`;
-function readOff(vid) { try { return parseFloat(localStorage.getItem(offKey(vid))) || 0; } catch { return 0; } }
-function saveOff(vid, v) { try { localStorage.setItem(offKey(vid), String(v)); } catch { /* 저장 못 해도 동작에는 문제 없음 */ } }
 
 function panelHTML(t, hasLyr) {
   return `<div class="panel">
     <button class="close" type="button" aria-label="닫기">✕</button>
     <div class="vid"><div class="screen"><div class="mount"></div></div>
-      <div class="tools"><span class="hits"></span><span class="sync" title="가사가 영상보다 빠르거나 느리면 맞춰 주세요"><span>싱크</span><button type="button" data-off="-0.5" aria-label="가사 0.5초 일찍">−</button><b class="offv">0.0s</b><button type="button" data-off="0.5" aria-label="가사 0.5초 늦게">+</button></span></div></div>
+      <div class="tools"><span class="hits"></span></div></div>
     <div class="grip" role="separator" aria-orientation="vertical" aria-label="영상 폭 조절"></div>
     <div class="lyr"><div class="ly-lines"></div></div>
     <div class="vgrip" role="separator" aria-orientation="horizontal" aria-label="패널 높이 조절"></div>
@@ -199,7 +196,8 @@ async function openPanel(item) {
   if (cur && cur.item === item) return closePanel();
   closePanel();
   const ti = +item.dataset.ti, t = state.tracks[ti], wid = state.wid;
-  const c = { item, ti, vid: t.vid, k: -1, times: [], lines: [], off: readOff(t.vid), player: null, poll: null, dead: false };
+  const key = `${t.album.id}|${t.album.n}`;
+  const c = { item, ti, vid: t.vid, key, wid, k: -1, times: [], lines: [], cands: [], idx: -1, off: 0, chosen: false, player: null, poll: null, dead: false };
   cur = c;
   const clip = $(".clip", item);
   clip.innerHTML = panelHTML(t);
@@ -207,26 +205,19 @@ async function openPanel(item) {
   void clip.offsetHeight;                               // 열리는 모션이 시작 상태에서 출발하도록
   item.classList.add("open");
   setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "nearest" }), 120);
-  $(".offv", clip).textContent = fmtOff(c.off);
 
   // 가사
   const ly = await ensureLyrics();
   if (c.dead) return;
-  const box = $(".lyr", clip), linesEl = $(".ly-lines", clip);
   const rec = ly && ly[ti];
+  c.off = rec && Number.isFinite(rec.o) ? rec.o : 0;           // 곡별 보정값(lyrics-offsets.json)
   if (!rec) {
+    const box = $(".lyr", clip);
     box.classList.add("static");
     box.insertAdjacentHTML("beforeend", `<div class="empty-note">${ly ? "이 곡은 가사 데이터가 없어요." : "가사 데이터(data/lyrics.json)가 없어서 영상만 재생합니다."}</div>`);
   } else {
-    const hl = new Set((rec.h && rec.h[wid]) || []);
-    c.lines = rec.l;
-    const synced = rec.l.some((x) => x[0] != null);
-    c.times = synced ? rec.l.map((x) => x[0]) : [];
-    linesEl.innerHTML = rec.l.map((x, i) => `<button type="button" class="ln${hl.has(i) ? " hit" : ""}" data-i="${i}">${esc(x[1])}</button>`).join("");
-    if (!synced) box.classList.add("static");
-    const chips = [...hl].filter((i) => rec.l[i][0] != null).slice(0, 6).map((i) => `<button type="button" class="hit-btn" data-t="${rec.l[i][0]}">▶ ${fmtT(rec.l[i][0])}</button>`);
-    if (chips.length) $(".hits", clip).innerHTML = `<span>단어가 나오는 곳</span>${chips.join("")}`;
-    else if (hl.size) $(".hits", clip).textContent = "강조된 줄에 단어가 나와요";
+    c.cands = rec.c;
+    useCand(c, Math.max(0, rec.c.findIndex((x) => x.l.some((r) => r[0] != null))));
   }
 
   // 영상
@@ -243,17 +234,39 @@ async function openPanel(item) {
     c.player = new YT.Player($(".mount", clip), opts);
   } catch { showFail(c, "YouTube 플레이어를 불러오지 못했어요."); }
 }
+function useCand(c, i) {
+  const cand = c.cands[i]; if (!cand) return;
+  c.idx = i; c.k = -1;
+  const clip = $(".clip", c.item), box = $(".lyr", clip), linesEl = $(".ly-lines", clip);
+  const hl = new Set(cand.h[c.wid] || []);
+  const synced = cand.l.some((r) => r[0] != null);
+  c.times = synced ? cand.l.map((r) => r[0]) : [];
+  linesEl.innerHTML = cand.l.map((r, j) => `<button type="button" class="ln${hl.has(j) ? " hit" : ""}" data-i="${j}">${esc(r[1] || "♪")}</button>`).join("");
+  linesEl.style.setProperty("--y", "0px");
+  box.classList.toggle("static", !synced);
+  const hits = $(".hits", clip);
+  const chips = [...hl].filter((j) => cand.l[j][0] != null).slice(0, 6).map((j) => `<button type="button" class="hit-btn" data-t="${cand.l[j][0]}">▶ ${fmtT(cand.l[j][0])}</button>`);
+  hits.innerHTML = chips.length ? `<span>단어가 나오는 곳</span>${chips.join("")}` : hl.size ? "강조된 줄에 단어가 나와요" : "";
+}
+// 영상 길이를 알게 되면, 길이가 가장 비슷한 가사 후보로 바꾼다 (켄시 도서관과 같은 방식)
+function chooseByDuration(c) {
+  if (c.chosen || c.dead || !c.cands.length || !c.player || typeof c.player.getDuration !== "function") return;
+  const dur = c.player.getDuration(); if (!dur) return;
+  c.chosen = true;
+  let best = -1, bd = Infinity;
+  c.cands.forEach((x, i) => { if (!x.l.some((r) => r[0] != null)) return; const d = Math.abs((x.d || 0) - dur); if (d < bd) { bd = d; best = i; } });
+  if (best >= 0 && best !== c.idx) useCand(c, best);
+}
 function showFail(c, msg) {
   if (c.dead) return;
   const scr = $(".screen", c.item); if (!scr) return;
   scr.innerHTML = `<div class="fail"><span>${msg}</span><a href="https://www.youtube.com/watch?v=${encodeURIComponent(c.vid)}" target="_blank" rel="noopener">YouTube에서 열기 ↗</a></div>`;
 }
-const fmtOff = (v) => `${v > 0 ? "+" : ""}${v.toFixed(1)}s`;
-function startPoll(c) { stopPoll(c); c.poll = setInterval(() => tick(c), 200); tick(c); }
+function startPoll(c) { stopPoll(c); chooseByDuration(c); c.poll = setInterval(() => tick(c), 200); tick(c); }
 function stopPoll(c) { if (c.poll) { clearInterval(c.poll); c.poll = null; } }
 function tick(c) {
   if (c.dead || !c.player || !c.times.length || typeof c.player.getCurrentTime !== "function") return;
-  const t = c.player.getCurrentTime() - c.off;
+  const t = c.player.getCurrentTime() + c.off;
   let k = -1;
   for (let i = 0; i < c.times.length; i++) { if (c.times[i] != null && c.times[i] <= t) k = i; else if (c.times[i] != null) break; }
   if (k !== c.k) setLine(c, k);
@@ -282,11 +295,10 @@ function wirePanel() {
     if (e.target.closest(".close")) return closePanel();
     if (e.target.closest(".song")) return openPanel(item);
     if (!cur || cur.item !== item) return;
-    const ln = e.target.closest(".ln"), hb = e.target.closest(".hit-btn"), ob = e.target.closest("[data-off]");
-    const seek = (sec) => { if (cur.player && cur.player.seekTo) { cur.player.seekTo(Math.max(0, sec + cur.off), true); cur.player.playVideo && cur.player.playVideo(); } };
+    const ln = e.target.closest(".ln"), hb = e.target.closest(".hit-btn");
+    const seek = (sec) => { if (cur.player && cur.player.seekTo) { cur.player.seekTo(Math.max(0, sec - cur.off), true); cur.player.playVideo && cur.player.playVideo(); } };
     if (ln && cur.times.length && cur.times[+ln.dataset.i] != null) seek(cur.times[+ln.dataset.i]);
     else if (hb) seek(+hb.dataset.t);
-    else if (ob) { cur.off = Math.round((cur.off + +ob.dataset.off) * 10) / 10; saveOff(cur.vid, cur.off); $(".offv", item).textContent = fmtOff(cur.off); tick(cur); }
   });
   // 크기 조절: 가로(영상 폭) / 세로(패널 높이)
   const root = document.documentElement;

@@ -166,9 +166,6 @@ main { padding-top: 12px; padding-bottom: 40px; min-height: 50vh; }
 .tools .hits { display: flex; flex-wrap: wrap; gap: 6px; }
 .hit-btn { border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; background: var(--paper); font-size: .8rem; transition: transform .5s var(--spring), border-color .2s; }
 .hit-btn:hover { border-color: var(--vermilion); transform: translateY(-1px); }
-.sync { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; }
-.sync button { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--line); background: var(--paper); line-height: 1; }
-.sync button:hover { border-color: var(--vermilion); }
 
 .grip { flex: 0 0 14px; cursor: col-resize; display: grid; place-items: center; touch-action: none; }
 .grip::before { content: ""; width: 4px; height: 44px; border-radius: 99px; background: var(--line); transition: background .25s, height .4s var(--spring); }
