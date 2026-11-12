@@ -1,0 +1,13 @@
+{
+  "name": "jp-word-search",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "교과서 단어로 켄시 노래 찾기 (조회수순) — 정적 사이트",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "build": "node tools/build-index.mjs",
+    "views": "node tools/fetch-views.mjs"
+  }
+}

@@ -1,0 +1,2994 @@
+[
+ {
+  "w": "うたう",
+  "kanji": "歌う",
+  "ko": "노래하다",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w001"
+ },
+ {
+  "w": "こうこう",
+  "kanji": "高校",
+  "ko": "고등학교, 고교",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w002"
+ },
+ {
+  "w": "じょうず",
+  "kanji": "上手",
+  "ko": "잘함",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w003"
+ },
+ {
+  "w": "すき",
+  "kanji": "好き",
+  "ko": "좋아함",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w004"
+ },
+ {
+  "w": "ともだち",
+  "kanji": "友だち",
+  "ko": "친구",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w005"
+ },
+ {
+  "w": "べんきょう",
+  "kanji": "勉強",
+  "ko": "공부",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w006"
+ },
+ {
+  "w": "まいにち",
+  "kanji": "毎日",
+  "ko": "매일",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w007"
+ },
+ {
+  "w": "りょこう",
+  "kanji": "旅行",
+  "ko": "여행",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w008"
+ },
+ {
+  "w": "れんしゅう",
+  "kanji": "練習",
+  "ko": "연습",
+  "unit": 1,
+  "page": 12,
+  "src": "index",
+  "kind": "word",
+  "id": "w009"
+ },
+ {
+  "w": "アニメ",
+  "kanji": "",
+  "ko": "애니메이션, 만화 영화",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w010"
+ },
+ {
+  "w": "いる",
+  "kanji": "居る",
+  "ko": "있다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w011"
+ },
+ {
+  "w": "お-",
+  "kanji": "",
+  "ko": "존경·겸양을 나타내는 접두어",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w012"
+ },
+ {
+  "w": "～が",
+  "kanji": "",
+  "ko": "~이/가",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w013"
+ },
+ {
+  "w": "こちら",
+  "kanji": "",
+  "ko": "이쪽",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w014"
+ },
+ {
+  "w": "こと",
+  "kanji": "事",
+  "ko": "일, 것",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w015"
+ },
+ {
+  "w": "-さん",
+  "kanji": "",
+  "ko": "~씨",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w016"
+ },
+ {
+  "w": "しゅみ",
+  "kanji": "",
+  "ko": "취미",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w017"
+ },
+ {
+  "w": "すごい",
+  "kanji": "",
+  "ko": "대단하다, 굉장하다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w018"
+ },
+ {
+  "w": "する",
+  "kanji": "",
+  "ko": "하다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "alias": [
+   {
+    "w": "します",
+    "ko": "합니다"
+   }
+  ],
+  "kind": "word",
+  "id": "w019"
+ },
+ {
+  "w": "ため",
+  "kanji": "",
+  "ko": "위함",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w020"
+ },
+ {
+  "w": "～て",
+  "kanji": "",
+  "ko": "~하고, ~해서",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w021"
+ },
+ {
+  "w": "～です",
+  "kanji": "",
+  "ko": "~입니다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w022"
+ },
+ {
+  "w": "どうぞ",
+  "kanji": "",
+  "ko": "자(권하는 말), 부디",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w023"
+ },
+ {
+  "w": "～に",
+  "kanji": "",
+  "ko": "~하게",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w024"
+ },
+ {
+  "w": "にほん",
+  "kanji": "日本",
+  "ko": "일본",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w025"
+ },
+ {
+  "w": "ねがう",
+  "kanji": "願う",
+  "ko": "바라다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w026"
+ },
+ {
+  "w": "～の",
+  "kanji": "",
+  "ko": "~인",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w027"
+ },
+ {
+  "w": "～の",
+  "kanji": "",
+  "ko": "~의",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w028"
+ },
+ {
+  "w": "～は",
+  "kanji": "",
+  "ko": "~은/는",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w029"
+ },
+ {
+  "w": "はじめまして",
+  "kanji": "",
+  "ko": "처음 뵙겠습니다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w030"
+ },
+ {
+  "w": "へえ",
+  "kanji": "",
+  "ko": "어머",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w031"
+ },
+ {
+  "w": "～ます",
+  "kanji": "",
+  "ko": "~합니다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w032"
+ },
+ {
+  "w": "みる",
+  "kanji": "見る",
+  "ko": "보다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w033"
+ },
+ {
+  "w": "～よ",
+  "kanji": "",
+  "ko": "~야, ~해",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w034"
+ },
+ {
+  "w": "よろしい",
+  "kanji": "",
+  "ko": "좋다",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w035"
+ },
+ {
+  "w": "わたし",
+  "kanji": "私",
+  "ko": "나",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "word",
+  "id": "w036"
+ },
+ {
+  "w": "～を",
+  "kanji": "",
+  "ko": "~을/를",
+  "unit": 1,
+  "page": 13,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w037"
+ },
+ {
+  "w": "あ",
+  "kanji": "",
+  "ko": "아",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "word",
+  "id": "w038"
+ },
+ {
+  "w": "おはよう",
+  "kanji": "",
+  "ko": "안녕(아침 인사)",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "word",
+  "id": "w039"
+ },
+ {
+  "w": "こ",
+  "kanji": "子",
+  "ko": "아이",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "word",
+  "id": "w040"
+ },
+ {
+  "w": "こちらこそ",
+  "kanji": "",
+  "ko": "저야말로",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w041"
+ },
+ {
+  "w": "この",
+  "kanji": "",
+  "ko": "이",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "word",
+  "id": "w042"
+ },
+ {
+  "w": "-せい",
+  "kanji": "生",
+  "ko": "-생",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w043"
+ },
+ {
+  "w": "～だ",
+  "kanji": "",
+  "ko": "~이다",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w044"
+ },
+ {
+  "w": "-ちゃん",
+  "kanji": "",
+  "ko": "친밀감을 나타내는 호칭",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w045"
+ },
+ {
+  "w": "～も",
+  "kanji": "",
+  "ko": "~도",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w046"
+ },
+ {
+  "w": "りゅうがく",
+  "kanji": "留学",
+  "ko": "유학",
+  "unit": 1,
+  "page": 14,
+  "src": "index",
+  "kind": "word",
+  "id": "w047"
+ },
+ {
+  "w": "りゅうがくせい",
+  "kanji": "",
+  "ko": "유학생",
+  "unit": 1,
+  "page": 14,
+  "src": "box",
+  "kind": "word",
+  "id": "w048"
+ },
+ {
+  "w": "よろしく おねがいします",
+  "kanji": "",
+  "ko": "잘 부탁합니다",
+  "unit": 1,
+  "page": 14,
+  "src": "box",
+  "kind": "phrase",
+  "id": "w049"
+ },
+ {
+  "w": "アニメソング",
+  "kanji": "",
+  "ko": "애니메이션 노래",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w050"
+ },
+ {
+  "w": "うーん",
+  "kanji": "",
+  "ko": "음",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w051"
+ },
+ {
+  "w": "うた",
+  "kanji": "歌",
+  "ko": "노래",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w052"
+ },
+ {
+  "w": "～かな",
+  "kanji": "",
+  "ko": "~일까?",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w053"
+ },
+ {
+  "w": "きく",
+  "kanji": "聞く",
+  "ko": "듣다",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w054"
+ },
+ {
+  "w": "クラス",
+  "kanji": "",
+  "ko": "클래스, 학급, 반",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w055"
+ },
+ {
+  "w": "こんど",
+  "kanji": "今度",
+  "ko": "이번, 다음",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w056"
+ },
+ {
+  "w": "そう",
+  "kanji": "",
+  "ko": "그렇게",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w057"
+ },
+ {
+  "w": "～で",
+  "kanji": "",
+  "ko": "~에서",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w058"
+ },
+ {
+  "w": "～とか",
+  "kanji": "",
+  "ko": "~라든지",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w059"
+ },
+ {
+  "w": "どんな",
+  "kanji": "",
+  "ko": "어떤",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w060"
+ },
+ {
+  "w": "なに",
+  "kanji": "何",
+  "ko": "무엇",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w061"
+ },
+ {
+  "w": "ほんとう",
+  "kanji": "本当",
+  "ko": "정말",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w062"
+ },
+ {
+  "w": "むり",
+  "kanji": "無理",
+  "ko": "무리",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w063"
+ },
+ {
+  "w": "ロック",
+  "kanji": "",
+  "ko": "록(Rock)",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w064"
+ },
+ {
+  "w": "Kポップ",
+  "kanji": "",
+  "ko": "한국 대중음악",
+  "unit": 1,
+  "page": 15,
+  "src": "index",
+  "kind": "word",
+  "id": "w065"
+ },
+ {
+  "w": "そうなんだ",
+  "kanji": "",
+  "ko": "그렇구나",
+  "unit": 1,
+  "page": 15,
+  "src": "box",
+  "kind": "word",
+  "id": "w066"
+ },
+ {
+  "w": "じょうずに",
+  "kanji": "",
+  "ko": "잘, 능숙하게",
+  "unit": 1,
+  "page": 15,
+  "src": "box",
+  "kind": "word",
+  "id": "w067"
+ },
+ {
+  "w": "～ために",
+  "kanji": "",
+  "ko": "~하기 위해",
+  "unit": 1,
+  "page": 15,
+  "src": "box",
+  "kind": "grammar",
+  "id": "w068"
+ },
+ {
+  "w": "～て いる",
+  "kanji": "",
+  "ko": "~하고 있다",
+  "unit": 1,
+  "page": 15,
+  "src": "box",
+  "kind": "grammar",
+  "id": "w069"
+ },
+ {
+  "w": "～か",
+  "kanji": "",
+  "ko": "~까?",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w070"
+ },
+ {
+  "w": "かんこく",
+  "kanji": "韓国",
+  "ko": "한국",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "word",
+  "id": "w071"
+ },
+ {
+  "w": "ゲーム",
+  "kanji": "",
+  "ko": "게임",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "word",
+  "id": "w072"
+ },
+ {
+  "w": "-じん",
+  "kanji": "人",
+  "ko": "-인",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w073"
+ },
+ {
+  "w": "～で",
+  "kanji": "",
+  "ko": "~이고",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w074"
+ },
+ {
+  "w": "なん",
+  "kanji": "何",
+  "ko": "무엇",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "word",
+  "id": "w075"
+ },
+ {
+  "w": "に",
+  "kanji": "二",
+  "ko": "2, 이, 둘",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w076"
+ },
+ {
+  "w": "-ねんせい",
+  "kanji": "年生",
+  "ko": "-학년",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w077"
+ },
+ {
+  "w": "ピアノ",
+  "kanji": "",
+  "ko": "피아노",
+  "unit": 1,
+  "page": 16,
+  "src": "index",
+  "kind": "word",
+  "id": "w078"
+ },
+ {
+  "w": "かんこくじん",
+  "kanji": "",
+  "ko": "한국인",
+  "unit": 1,
+  "page": 16,
+  "src": "box",
+  "kind": "word",
+  "id": "w079"
+ },
+ {
+  "w": "スポーツ",
+  "kanji": "",
+  "ko": "스포츠",
+  "unit": 1,
+  "page": 17,
+  "src": "index",
+  "kind": "word",
+  "id": "w080"
+ },
+ {
+  "w": "やきゅう",
+  "kanji": "野球",
+  "ko": "야구",
+  "unit": 1,
+  "page": 17,
+  "src": "index",
+  "kind": "word",
+  "id": "w081"
+ },
+ {
+  "w": "りょうり",
+  "kanji": "料理",
+  "ko": "요리",
+  "unit": 1,
+  "page": 17,
+  "src": "index",
+  "kind": "word",
+  "id": "w082"
+ },
+ {
+  "w": "Jポップ",
+  "kanji": "",
+  "ko": "일본 대중음악",
+  "unit": 1,
+  "page": 17,
+  "src": "index",
+  "kind": "word",
+  "id": "w083"
+ },
+ {
+  "w": "ありがとうございます",
+  "kanji": "",
+  "ko": "고맙습니다",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w084"
+ },
+ {
+  "w": "いく",
+  "kanji": "行く",
+  "ko": "가다",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "alias": [
+   {
+    "w": "いきましょう",
+    "ko": "갑시다"
+   }
+  ],
+  "kind": "word",
+  "id": "w085"
+ },
+ {
+  "w": "いじょう",
+  "kanji": "以上",
+  "ko": "이상",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w086"
+ },
+ {
+  "w": "おうえん",
+  "kanji": "応援",
+  "ko": "응원",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w087"
+ },
+ {
+  "w": "～から",
+  "kanji": "",
+  "ko": "~부터",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w088"
+ },
+ {
+  "w": "くださる",
+  "kanji": "",
+  "ko": "주시다",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w089"
+ },
+ {
+  "w": "こうしえん",
+  "kanji": "甲子園",
+  "ko": "고시엔",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w090"
+ },
+ {
+  "w": "ことし",
+  "kanji": "今年",
+  "ko": "올해",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w091"
+ },
+ {
+  "w": "こども",
+  "kanji": "子供",
+  "ko": "아이, 어린이",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w092"
+ },
+ {
+  "w": "ぜったい",
+  "kanji": "絶対",
+  "ko": "절대(로)",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w093"
+ },
+ {
+  "w": "それで",
+  "kanji": "",
+  "ko": "그래서",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w094"
+ },
+ {
+  "w": "～た",
+  "kanji": "",
+  "ko": "~했다",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w095"
+ },
+ {
+  "w": "だいすき",
+  "kanji": "大好き",
+  "ko": "매우 좋아함",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w096"
+ },
+ {
+  "w": "つよい",
+  "kanji": "強い",
+  "ko": "강하다",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w097"
+ },
+ {
+  "w": "とき",
+  "kanji": "時",
+  "ko": "때",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w098"
+ },
+ {
+  "w": "～に",
+  "kanji": "",
+  "ko": "~에, ~에게",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w099"
+ },
+ {
+  "w": "にゅうがく",
+  "kanji": "入学",
+  "ko": "입학",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w100"
+ },
+ {
+  "w": "ぼく",
+  "kanji": "",
+  "ko": "나(남성의 1인칭)",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w101"
+ },
+ {
+  "w": "みな",
+  "kanji": "",
+  "ko": "모두",
+  "unit": 1,
+  "page": 19,
+  "src": "index",
+  "kind": "word",
+  "id": "w102"
+ },
+ {
+  "w": "みなさん",
+  "kanji": "",
+  "ko": "여러분",
+  "unit": 1,
+  "page": 19,
+  "src": "box",
+  "kind": "word",
+  "id": "w103"
+ },
+ {
+  "w": "だいすきです",
+  "kanji": "",
+  "ko": "아주 좋아해요",
+  "unit": 1,
+  "page": 19,
+  "src": "box",
+  "kind": "phrase",
+  "id": "w104"
+ },
+ {
+  "w": "～て ください",
+  "kanji": "",
+  "ko": "~해 주세요",
+  "unit": 1,
+  "page": 19,
+  "src": "box",
+  "kind": "grammar",
+  "id": "w105"
+ },
+ {
+  "w": "あまり",
+  "kanji": "",
+  "ko": "별로, 그다지",
+  "unit": 1,
+  "page": 20,
+  "src": "index",
+  "kind": "word",
+  "id": "w106"
+ },
+ {
+  "w": "すこし",
+  "kanji": "少し",
+  "ko": "조금",
+  "unit": 1,
+  "page": 20,
+  "src": "index",
+  "kind": "word",
+  "id": "w107"
+ },
+ {
+  "w": "ぜんぜん",
+  "kanji": "",
+  "ko": "전혀",
+  "unit": 1,
+  "page": 20,
+  "src": "index",
+  "kind": "word",
+  "id": "w108"
+ },
+ {
+  "w": "でも",
+  "kanji": "",
+  "ko": "하지만",
+  "unit": 1,
+  "page": 20,
+  "src": "index",
+  "kind": "word",
+  "id": "w109"
+ },
+ {
+  "w": "とても",
+  "kanji": "",
+  "ko": "매우",
+  "unit": 1,
+  "page": 20,
+  "src": "index",
+  "kind": "word",
+  "id": "w110"
+ },
+ {
+  "w": "～ない",
+  "kanji": "",
+  "ko": "~아니다",
+  "unit": 1,
+  "page": 20,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w111"
+ },
+ {
+  "w": "～じゃない",
+  "kanji": "",
+  "ko": "~하지 않다",
+  "unit": 1,
+  "page": 20,
+  "src": "box",
+  "kind": "grammar",
+  "id": "w112"
+ },
+ {
+  "w": "うち",
+  "kanji": "",
+  "ko": "한 가지, 한 종류",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "word",
+  "id": "w113"
+ },
+ {
+  "w": "うる",
+  "kanji": "売る",
+  "ko": "팔다",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "alias": [
+   {
+    "w": "うれた",
+    "ko": "팔렸다"
+   }
+  ],
+  "kind": "word",
+  "id": "w114"
+ },
+ {
+  "w": "こめ",
+  "kanji": "",
+  "ko": "쌀",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "word",
+  "id": "w115"
+ },
+ {
+  "w": "すもも",
+  "kanji": "",
+  "ko": "자두",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "word",
+  "id": "w116"
+ },
+ {
+  "w": "たまご",
+  "kanji": "",
+  "ko": "달걀",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "word",
+  "id": "w117"
+ },
+ {
+  "w": "なま-",
+  "kanji": "生",
+  "ko": "생-, 날-",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w118"
+ },
+ {
+  "w": "むぎ",
+  "kanji": "",
+  "ko": "보리",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "word",
+  "id": "w119"
+ },
+ {
+  "w": "もう",
+  "kanji": "",
+  "ko": "이제, 벌써",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "word",
+  "id": "w120"
+ },
+ {
+  "w": "もも",
+  "kanji": "",
+  "ko": "복숭아",
+  "unit": 1,
+  "page": 21,
+  "src": "index",
+  "kind": "word",
+  "id": "w121"
+ },
+ {
+  "w": "おかげさまで",
+  "kanji": "",
+  "ko": "덕분에",
+  "unit": 1,
+  "page": 22,
+  "src": "index",
+  "kind": "word",
+  "id": "w122"
+ },
+ {
+  "w": "かぞく",
+  "kanji": "家族",
+  "ko": "가족",
+  "unit": 1,
+  "page": 22,
+  "src": "index",
+  "kind": "word",
+  "id": "w123"
+ },
+ {
+  "w": "げんき",
+  "kanji": "元気",
+  "ko": "건강한 모양, 기력",
+  "unit": 1,
+  "page": 22,
+  "src": "index",
+  "kind": "word",
+  "id": "w124"
+ },
+ {
+  "w": "ご-",
+  "kanji": "",
+  "ko": "존경·겸양을 나타내는 접두어",
+  "unit": 1,
+  "page": 22,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w125"
+ },
+ {
+  "w": "どうも",
+  "kanji": "",
+  "ko": "정말, 대단히",
+  "unit": 1,
+  "page": 22,
+  "src": "index",
+  "kind": "word",
+  "id": "w126"
+ },
+ {
+  "w": "はい",
+  "kanji": "",
+  "ko": "네",
+  "unit": 1,
+  "page": 22,
+  "src": "index",
+  "kind": "word",
+  "id": "w127"
+ },
+ {
+  "w": "ひさしぶり",
+  "kanji": "",
+  "ko": "오랜만이야",
+  "unit": 1,
+  "page": 22,
+  "src": "index",
+  "kind": "word",
+  "id": "w128"
+ },
+ {
+  "w": "おもしろい",
+  "kanji": "",
+  "ko": "재미있다",
+  "unit": 1,
+  "page": 25,
+  "src": "index",
+  "kind": "word",
+  "id": "w129"
+ },
+ {
+  "w": "がんばる",
+  "kanji": "",
+  "ko": "참고 계속 노력하다",
+  "unit": 1,
+  "page": 25,
+  "src": "index",
+  "kind": "word",
+  "id": "w130"
+ },
+ {
+  "w": "-ご",
+  "kanji": "語",
+  "ko": "-어",
+  "unit": 1,
+  "page": 25,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w131"
+ },
+ {
+  "w": "あたたかい",
+  "kanji": "",
+  "ko": "따뜻하다",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w132"
+ },
+ {
+  "w": "えき",
+  "kanji": "駅",
+  "ko": "역",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w133"
+ },
+ {
+  "w": "さむい",
+  "kanji": "寒い",
+  "ko": "춥다",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w134"
+ },
+ {
+  "w": "しゅうまつ",
+  "kanji": "週末",
+  "ko": "주말",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w135"
+ },
+ {
+  "w": "どようび",
+  "kanji": "土ようび",
+  "ko": "토요일",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w136"
+ },
+ {
+  "w": "バイト",
+  "kanji": "",
+  "ko": "아르바이트",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w137"
+ },
+ {
+  "w": "はなみ",
+  "kanji": "花見",
+  "ko": "꽃구경",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w138"
+ },
+ {
+  "w": "まにあう",
+  "kanji": "間に合う",
+  "ko": "시간에 대다, 늦지 않다",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "alias": [
+   {
+    "w": "まにあって",
+    "ko": "시간에 대서, 늦지 않아서"
+   }
+  ],
+  "kind": "word",
+  "id": "w139"
+ },
+ {
+  "w": "もつ",
+  "kanji": "持つ",
+  "ko": "가지다, 들다",
+  "unit": 2,
+  "page": 28,
+  "src": "index",
+  "kind": "word",
+  "id": "w140"
+ },
+ {
+  "w": "いい",
+  "kanji": "",
+  "ko": "좋다",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w141"
+ },
+ {
+  "w": "いち",
+  "kanji": "一",
+  "ko": "1, 일, 하나",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w142"
+ },
+ {
+  "w": "うん",
+  "kanji": "",
+  "ko": "응",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w143"
+ },
+ {
+  "w": "えいが",
+  "kanji": "映画",
+  "ko": "영화",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w144"
+ },
+ {
+  "w": "かかる",
+  "kanji": "",
+  "ko": "걸리다",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w145"
+ },
+ {
+  "w": "～くらい･ぐらい",
+  "kanji": "",
+  "ko": "~정도",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w146"
+ },
+ {
+  "w": "ごめん",
+  "kanji": "",
+  "ko": "미안",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w147"
+ },
+ {
+  "w": "ざんねん",
+  "kanji": "",
+  "ko": "아쉬움, 유감스러움",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w148"
+ },
+ {
+  "w": "-じ",
+  "kanji": "時",
+  "ko": "~시",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w149"
+ },
+ {
+  "w": "じゅう/じゅっ",
+  "kanji": "十",
+  "ko": "십, 10",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w150"
+ },
+ {
+  "w": "どう",
+  "kanji": "",
+  "ko": "어떻게",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w151"
+ },
+ {
+  "w": "どの",
+  "kanji": "",
+  "ko": "어느",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w152"
+ },
+ {
+  "w": "～ね",
+  "kanji": "",
+  "ko": "~구나, ~지?",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w153"
+ },
+ {
+  "w": "-ふん/ぷん",
+  "kanji": "分",
+  "ko": "-분",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w154"
+ },
+ {
+  "w": "やくそく",
+  "kanji": "約束",
+  "ko": "약속",
+  "unit": 2,
+  "page": 29,
+  "src": "index",
+  "kind": "word",
+  "id": "w155"
+ },
+ {
+  "w": "ある",
+  "kanji": "",
+  "ko": "있다",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "alias": [
+   {
+    "w": "あります",
+    "ko": "있습니다"
+   }
+  ],
+  "kind": "word",
+  "id": "w156"
+ },
+ {
+  "w": "じかん",
+  "kanji": "時間",
+  "ko": "시간",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "kind": "word",
+  "id": "w157"
+ },
+ {
+  "w": "しつもん",
+  "kanji": "質問",
+  "ko": "질문",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "kind": "word",
+  "id": "w158"
+ },
+ {
+  "w": "せんせい",
+  "kanji": "先生",
+  "ko": "선생님",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "kind": "word",
+  "id": "w159"
+ },
+ {
+  "w": "ちかく",
+  "kanji": "近く",
+  "ko": "근처",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "kind": "word",
+  "id": "w160"
+ },
+ {
+  "w": "できる",
+  "kanji": "",
+  "ko": "할 수 있다",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "alias": [
+   {
+    "w": "できますか",
+    "ko": "가능한가요?"
+   }
+  ],
+  "kind": "word",
+  "id": "w161"
+ },
+ {
+  "w": "ねえ",
+  "kanji": "",
+  "ko": "있잖아",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "kind": "word",
+  "id": "w162"
+ },
+ {
+  "w": "やすむ",
+  "kanji": "休む",
+  "ko": "쉬다",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "kind": "word",
+  "id": "w163"
+ },
+ {
+  "w": "わかる",
+  "kanji": "分かる",
+  "ko": "이해하다, 알다",
+  "unit": 2,
+  "page": 30,
+  "src": "index",
+  "kind": "word",
+  "id": "w164"
+ },
+ {
+  "w": "やすみじかん",
+  "kanji": "",
+  "ko": "쉬는 시간",
+  "unit": 2,
+  "page": 30,
+  "src": "box",
+  "kind": "word",
+  "id": "w165"
+ },
+ {
+  "w": "きいて みて ください",
+  "kanji": "",
+  "ko": "물어보세요, 물어봐 주세요",
+  "unit": 2,
+  "page": 30,
+  "src": "box",
+  "kind": "phrase",
+  "id": "w166"
+ },
+ {
+  "w": "ねえねえ",
+  "kanji": "",
+  "ko": "있잖아",
+  "unit": 2,
+  "page": 30,
+  "src": "box",
+  "kind": "word",
+  "id": "w167"
+ },
+ {
+  "w": "ざんねんだね",
+  "kanji": "",
+  "ko": "아쉽네",
+  "unit": 2,
+  "page": 30,
+  "src": "box",
+  "kind": "word",
+  "id": "w168"
+ },
+ {
+  "w": "ありがとう",
+  "kanji": "",
+  "ko": "고마워",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w169"
+ },
+ {
+  "w": "～う･よう",
+  "kanji": "",
+  "ko": "~하자",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w170"
+ },
+ {
+  "w": "おそい",
+  "kanji": "",
+  "ko": "늦다",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "word",
+  "id": "w171"
+ },
+ {
+  "w": "きれい",
+  "kanji": "",
+  "ko": "예쁘다, 깨끗하다",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "word",
+  "id": "w172"
+ },
+ {
+  "w": "-くん",
+  "kanji": "君",
+  "ko": "~군",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w173"
+ },
+ {
+  "w": "どこ",
+  "kanji": "",
+  "ko": "어디",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "word",
+  "id": "w174"
+ },
+ {
+  "w": "～なあ",
+  "kanji": "",
+  "ko": "~구나",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w175"
+ },
+ {
+  "w": "～まで",
+  "kanji": "",
+  "ko": "~까지",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w176"
+ },
+ {
+  "w": "ゆっくり",
+  "kanji": "",
+  "ko": "천천히",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "word",
+  "id": "w177"
+ },
+ {
+  "w": "よい",
+  "kanji": "",
+  "ko": "좋다",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "alias": [
+   {
+    "w": "よかった",
+    "ko": "다행이다"
+   }
+  ],
+  "kind": "word",
+  "id": "w178"
+ },
+ {
+  "w": "りょうかい",
+  "kanji": "了解",
+  "ko": "이해함",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "word",
+  "id": "w179"
+ },
+ {
+  "w": "わあ",
+  "kanji": "",
+  "ko": "우아",
+  "unit": 2,
+  "page": 31,
+  "src": "index",
+  "kind": "word",
+  "id": "w180"
+ },
+ {
+  "w": "どうしよう",
+  "kanji": "",
+  "ko": "어떻게 하지?",
+  "unit": 2,
+  "page": 31,
+  "src": "box",
+  "kind": "word",
+  "id": "w181"
+ },
+ {
+  "w": "どのくらい",
+  "kanji": "",
+  "ko": "얼마나, 어느 정도",
+  "unit": 2,
+  "page": 31,
+  "src": "box",
+  "kind": "word",
+  "id": "w182"
+ },
+ {
+  "w": "きょう",
+  "kanji": "今日",
+  "ko": "오늘",
+  "unit": 2,
+  "page": 32,
+  "src": "index",
+  "kind": "word",
+  "id": "w183"
+ },
+ {
+  "w": "すいようび",
+  "kanji": "水ようび",
+  "ko": "수요일",
+  "unit": 2,
+  "page": 32,
+  "src": "index",
+  "kind": "word",
+  "id": "w184"
+ },
+ {
+  "w": "すみません",
+  "kanji": "",
+  "ko": "미안합니다",
+  "unit": 2,
+  "page": 32,
+  "src": "index",
+  "kind": "word",
+  "id": "w185"
+ },
+ {
+  "w": "どうですか",
+  "kanji": "",
+  "ko": "어떻습니까?, 어때요?",
+  "unit": 2,
+  "page": 32,
+  "src": "box",
+  "kind": "word",
+  "id": "w186"
+ },
+ {
+  "w": "いえ",
+  "kanji": "家",
+  "ko": "집",
+  "unit": 2,
+  "page": 33,
+  "src": "index",
+  "kind": "word",
+  "id": "w187"
+ },
+ {
+  "w": "がっこう",
+  "kanji": "学校",
+  "ko": "학교",
+  "unit": 2,
+  "page": 33,
+  "src": "index",
+  "kind": "word",
+  "id": "w188"
+ },
+ {
+  "w": "く",
+  "kanji": "九",
+  "ko": "9, 구",
+  "unit": 2,
+  "page": 33,
+  "src": "index",
+  "kind": "word",
+  "id": "w189"
+ },
+ {
+  "w": "さん",
+  "kanji": "三",
+  "ko": "삼, 3",
+  "unit": 2,
+  "page": 33,
+  "src": "index",
+  "kind": "word",
+  "id": "w190"
+ },
+ {
+  "w": "とうきょう",
+  "kanji": "東京",
+  "ko": "도쿄<지명>",
+  "unit": 2,
+  "page": 33,
+  "src": "index",
+  "kind": "word",
+  "id": "w191"
+ },
+ {
+  "w": "にちようび",
+  "kanji": "日ようび",
+  "ko": "일요일",
+  "unit": 2,
+  "page": 33,
+  "src": "index",
+  "kind": "word",
+  "id": "w192"
+ },
+ {
+  "w": "もしもし",
+  "kanji": "",
+  "ko": "여보세요",
+  "unit": 2,
+  "page": 33,
+  "src": "index",
+  "kind": "word",
+  "id": "w193"
+ },
+ {
+  "w": "うわぎ",
+  "kanji": "",
+  "ko": "겉옷",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w194"
+ },
+ {
+  "w": "-がつ",
+  "kanji": "月",
+  "ko": "-월",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w195"
+ },
+ {
+  "w": "さいきん",
+  "kanji": "最近",
+  "ko": "최근, 요즘",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w196"
+ },
+ {
+  "w": "さく",
+  "kanji": "咲く",
+  "ko": "피다",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w197"
+ },
+ {
+  "w": "さくら",
+  "kanji": "",
+  "ko": "벚꽃",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w198"
+ },
+ {
+  "w": "ずっと",
+  "kanji": "",
+  "ko": "계속",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w199"
+ },
+ {
+  "w": "てんき",
+  "kanji": "天気",
+  "ko": "날씨",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w200"
+ },
+ {
+  "w": "-にち",
+  "kanji": "日",
+  "ko": "-일",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w201"
+ },
+ {
+  "w": "はれる",
+  "kanji": "晴れる",
+  "ko": "맑다, 개다",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w202"
+ },
+ {
+  "w": "ふくおか",
+  "kanji": "福岡",
+  "ko": "후쿠오카<지명>",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w203"
+ },
+ {
+  "w": "まだ",
+  "kanji": "",
+  "ko": "아직",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w204"
+ },
+ {
+  "w": "みえる",
+  "kanji": "見える",
+  "ko": "보이다",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w205"
+ },
+ {
+  "w": "よほう",
+  "kanji": "予報",
+  "ko": "예보",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w206"
+ },
+ {
+  "w": "よる",
+  "kanji": "夜",
+  "ko": "밤",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w207"
+ },
+ {
+  "w": "らいしゅう",
+  "kanji": "来週",
+  "ko": "다음 주",
+  "unit": 2,
+  "page": 35,
+  "src": "index",
+  "kind": "word",
+  "id": "w208"
+ },
+ {
+  "w": "～でしょう",
+  "kanji": "",
+  "ko": "~겠지요",
+  "unit": 2,
+  "page": 35,
+  "src": "box",
+  "kind": "grammar",
+  "id": "w209"
+ },
+ {
+  "w": "もって いって",
+  "kanji": "",
+  "ko": "가지고 가(요)",
+  "unit": 2,
+  "page": 35,
+  "src": "box",
+  "kind": "phrase",
+  "id": "w210"
+ },
+ {
+  "w": "てんきよほう",
+  "kanji": "",
+  "ko": "일기 예보",
+  "unit": 2,
+  "page": 35,
+  "src": "box",
+  "kind": "word",
+  "id": "w211"
+ },
+ {
+  "w": "あした",
+  "kanji": "明日",
+  "ko": "내일",
+  "unit": 2,
+  "page": 36,
+  "src": "index",
+  "kind": "word",
+  "id": "w212"
+ },
+ {
+  "w": "あつい",
+  "kanji": "暑い",
+  "ko": "덥다",
+  "unit": 2,
+  "page": 36,
+  "src": "index",
+  "kind": "word",
+  "id": "w213"
+ },
+ {
+  "w": "あめ",
+  "kanji": "雨",
+  "ko": "비",
+  "unit": 2,
+  "page": 36,
+  "src": "index",
+  "kind": "word",
+  "id": "w214"
+ },
+ {
+  "w": "くもり",
+  "kanji": "",
+  "ko": "흐림",
+  "unit": 2,
+  "page": 36,
+  "src": "index",
+  "kind": "word",
+  "id": "w215"
+ },
+ {
+  "w": "すずしい",
+  "kanji": "",
+  "ko": "시원하다",
+  "unit": 2,
+  "page": 36,
+  "src": "index",
+  "kind": "word",
+  "id": "w216"
+ },
+ {
+  "w": "はれ",
+  "kanji": "",
+  "ko": "맑음",
+  "unit": 2,
+  "page": 36,
+  "src": "index",
+  "kind": "word",
+  "id": "w217"
+ },
+ {
+  "w": "ゆき",
+  "kanji": "雪",
+  "ko": "눈",
+  "unit": 2,
+  "page": 36,
+  "src": "index",
+  "kind": "word",
+  "id": "w218"
+ },
+ {
+  "w": "しゅくだい",
+  "kanji": "宿題",
+  "ko": "숙제",
+  "unit": 2,
+  "page": 38,
+  "src": "index",
+  "kind": "word",
+  "id": "w219"
+ },
+ {
+  "w": "テスト",
+  "kanji": "",
+  "ko": "테스트, 시험",
+  "unit": 2,
+  "page": 38,
+  "src": "index",
+  "kind": "word",
+  "id": "w220"
+ },
+ {
+  "w": "ページ",
+  "kanji": "",
+  "ko": "페이지",
+  "unit": 2,
+  "page": 38,
+  "src": "index",
+  "kind": "word",
+  "id": "w221"
+ },
+ {
+  "w": "うれしい",
+  "kanji": "",
+  "ko": "기쁘다",
+  "unit": 2,
+  "page": 39,
+  "src": "index",
+  "kind": "word",
+  "id": "w222"
+ },
+ {
+  "w": "おいしい",
+  "kanji": "",
+  "ko": "맛있다",
+  "unit": 2,
+  "page": 39,
+  "src": "index",
+  "kind": "word",
+  "id": "w223"
+ },
+ {
+  "w": "かわいい",
+  "kanji": "",
+  "ko": "귀엽다",
+  "unit": 2,
+  "page": 39,
+  "src": "index",
+  "kind": "word",
+  "id": "w224"
+ },
+ {
+  "w": "これ",
+  "kanji": "",
+  "ko": "이것",
+  "unit": 2,
+  "page": 39,
+  "src": "index",
+  "kind": "word",
+  "id": "w225"
+ },
+ {
+  "w": "いま",
+  "kanji": "今",
+  "ko": "지금",
+  "unit": 2,
+  "page": 41,
+  "src": "index",
+  "kind": "word",
+  "id": "w226"
+ },
+ {
+  "w": "くる",
+  "kanji": "来る",
+  "ko": "오다",
+  "unit": 2,
+  "page": 41,
+  "src": "index",
+  "alias": [
+   {
+    "w": "きてね",
+    "ko": "와요, 와, 와라, 오렴"
+   }
+  ],
+  "kind": "word",
+  "id": "w227"
+ },
+ {
+  "w": "こうえん",
+  "kanji": "公園",
+  "ko": "공원",
+  "unit": 2,
+  "page": 41,
+  "src": "index",
+  "kind": "word",
+  "id": "w228"
+ },
+ {
+  "w": "みどり",
+  "kanji": "緑",
+  "ko": "초록색",
+  "unit": 2,
+  "page": 41,
+  "src": "index",
+  "kind": "word",
+  "id": "w229"
+ },
+ {
+  "w": "いっしょ",
+  "kanji": "",
+  "ko": "함께",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w230"
+ },
+ {
+  "w": "おちゃ",
+  "kanji": "お茶",
+  "ko": "차",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w231"
+ },
+ {
+  "w": "さしみ",
+  "kanji": "",
+  "ko": "회",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w232"
+ },
+ {
+  "w": "なっとう",
+  "kanji": "",
+  "ko": "낫토",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w233"
+ },
+ {
+  "w": "にがて",
+  "kanji": "苦手",
+  "ko": "잘하지 못함",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w234"
+ },
+ {
+  "w": "はじめて",
+  "kanji": "初めて",
+  "ko": "처음",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w235"
+ },
+ {
+  "w": "へや",
+  "kanji": "部屋",
+  "ko": "방",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w236"
+ },
+ {
+  "w": "ようい",
+  "kanji": "用意",
+  "ko": "준비",
+  "unit": 3,
+  "page": 44,
+  "src": "index",
+  "kind": "word",
+  "id": "w237"
+ },
+ {
+  "w": "あがる",
+  "kanji": "上がる",
+  "ko": "올라가다, 올라오다",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "kind": "word",
+  "id": "w238"
+ },
+ {
+  "w": "いいえ",
+  "kanji": "",
+  "ko": "아니요",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "kind": "word",
+  "id": "w239"
+ },
+ {
+  "w": "いらっしゃい",
+  "kanji": "",
+  "ko": "어서 오세요",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "kind": "word",
+  "id": "w240"
+ },
+ {
+  "w": "おじゃまします",
+  "kanji": "",
+  "ko": "실례하겠습니다",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w241"
+ },
+ {
+  "w": "すし",
+  "kanji": "",
+  "ko": "초밥",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "kind": "word",
+  "id": "w242"
+ },
+ {
+  "w": "たべる",
+  "kanji": "食べる",
+  "ko": "먹다",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "alias": [
+   {
+    "w": "たべられますか",
+    "ko": "먹을 수 있어요?"
+   }
+  ],
+  "kind": "word",
+  "id": "w243"
+ },
+ {
+  "w": "ちょっと",
+  "kanji": "",
+  "ko": "좀, 조금",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "kind": "word",
+  "id": "w244"
+ },
+ {
+  "w": "～れる･られる",
+  "kanji": "",
+  "ko": "~되다, ~당하다",
+  "unit": 3,
+  "page": 45,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w245"
+ },
+ {
+  "w": "いただきます",
+  "kanji": "",
+  "ko": "잘 먹겠습니다",
+  "unit": 3,
+  "page": 46,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w246"
+ },
+ {
+  "w": "ここ",
+  "kanji": "",
+  "ko": "이곳, 여기",
+  "unit": 3,
+  "page": 46,
+  "src": "index",
+  "kind": "word",
+  "id": "w247"
+ },
+ {
+  "w": "たたみ",
+  "kanji": "畳",
+  "ko": "다다미",
+  "unit": 3,
+  "page": 46,
+  "src": "index",
+  "kind": "word",
+  "id": "w248"
+ },
+ {
+  "w": "てまきずし",
+  "kanji": "手巻きずし",
+  "ko": "데마키즈시",
+  "unit": 3,
+  "page": 46,
+  "src": "index",
+  "kind": "word",
+  "id": "w249"
+ },
+ {
+  "w": "はは",
+  "kanji": "母",
+  "ko": "엄마, 어머니",
+  "unit": 3,
+  "page": 46,
+  "src": "index",
+  "kind": "word",
+  "id": "w250"
+ },
+ {
+  "w": "やる",
+  "kanji": "",
+  "ko": "하다",
+  "unit": 3,
+  "page": 46,
+  "src": "index",
+  "kind": "word",
+  "id": "w251"
+ },
+ {
+  "w": "わしつ",
+  "kanji": "和室",
+  "ko": "일본 전통식 방",
+  "unit": 3,
+  "page": 46,
+  "src": "index",
+  "kind": "word",
+  "id": "w252"
+ },
+ {
+  "w": "あがって ください",
+  "kanji": "",
+  "ko": "올라오세요",
+  "unit": 3,
+  "page": 46,
+  "src": "box",
+  "kind": "phrase",
+  "id": "w253"
+ },
+ {
+  "w": "～が",
+  "kanji": "",
+  "ko": "~지만",
+  "unit": 3,
+  "page": 47,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w254"
+ },
+ {
+  "w": "にがてです",
+  "kanji": "",
+  "ko": "잘 못해요, 약해요",
+  "unit": 3,
+  "page": 47,
+  "src": "box",
+  "kind": "phrase",
+  "id": "w255"
+ },
+ {
+  "w": "また",
+  "kanji": "",
+  "ko": "또, 다시",
+  "unit": 3,
+  "page": 47,
+  "src": "box",
+  "kind": "word",
+  "id": "w256"
+ },
+ {
+  "w": "かんじ",
+  "kanji": "漢字",
+  "ko": "한자",
+  "unit": 3,
+  "page": 49,
+  "src": "index",
+  "kind": "word",
+  "id": "w257"
+ },
+ {
+  "w": "じてんしゃ",
+  "kanji": "自転車",
+  "ko": "자전거",
+  "unit": 3,
+  "page": 49,
+  "src": "index",
+  "kind": "word",
+  "id": "w258"
+ },
+ {
+  "w": "すいえい",
+  "kanji": "水泳",
+  "ko": "수영",
+  "unit": 3,
+  "page": 49,
+  "src": "index",
+  "kind": "word",
+  "id": "w259"
+ },
+ {
+  "w": "のる",
+  "kanji": "乗る",
+  "ko": "타다",
+  "unit": 3,
+  "page": 49,
+  "src": "index",
+  "alias": [
+   {
+    "w": "のれます",
+    "ko": "탈 수 있어요"
+   }
+  ],
+  "kind": "word",
+  "id": "w260"
+ },
+ {
+  "w": "やま",
+  "kanji": "山",
+  "ko": "산",
+  "unit": 3,
+  "page": 49,
+  "src": "index",
+  "kind": "word",
+  "id": "w261"
+ },
+ {
+  "w": "よむ",
+  "kanji": "読む",
+  "ko": "읽다",
+  "unit": 3,
+  "page": 49,
+  "src": "index",
+  "alias": [
+   {
+    "w": "よめます",
+    "ko": "읽을 수 있어요"
+   }
+  ],
+  "kind": "word",
+  "id": "w262"
+ },
+ {
+  "w": "いっしょに",
+  "kanji": "",
+  "ko": "함께, 같이",
+  "unit": 3,
+  "page": 49,
+  "src": "box",
+  "kind": "word",
+  "id": "w263"
+ },
+ {
+  "w": "あまい",
+  "kanji": "甘い",
+  "ko": "달다",
+  "unit": 3,
+  "page": 51,
+  "src": "index",
+  "kind": "word",
+  "id": "w264"
+ },
+ {
+  "w": "かい",
+  "kanji": "会",
+  "ko": "모임",
+  "unit": 3,
+  "page": 51,
+  "src": "index",
+  "kind": "word",
+  "id": "w265"
+ },
+ {
+  "w": "たのしむ",
+  "kanji": "楽しむ",
+  "ko": "즐기다",
+  "unit": 3,
+  "page": 51,
+  "src": "index",
+  "alias": [
+   {
+    "w": "たのしめます",
+    "ko": "즐길 수 있어요"
+   }
+  ],
+  "kind": "word",
+  "id": "w266"
+ },
+ {
+  "w": "～でも",
+  "kanji": "",
+  "ko": "~라도",
+  "unit": 3,
+  "page": 51,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w267"
+ },
+ {
+  "w": "にがい",
+  "kanji": "",
+  "ko": "쓰다",
+  "unit": 3,
+  "page": 51,
+  "src": "index",
+  "kind": "word",
+  "id": "w268"
+ },
+ {
+  "w": "ひと",
+  "kanji": "人",
+  "ko": "사람",
+  "unit": 3,
+  "page": 51,
+  "src": "index",
+  "kind": "word",
+  "id": "w269"
+ },
+ {
+  "w": "わがし",
+  "kanji": "和菓子",
+  "ko": "일본 전통 과자",
+  "unit": 3,
+  "page": 51,
+  "src": "index",
+  "kind": "word",
+  "id": "w270"
+ },
+ {
+  "w": "おちゃかい",
+  "kanji": "",
+  "ko": "차 모임",
+  "unit": 3,
+  "page": 51,
+  "src": "box",
+  "kind": "word",
+  "id": "w271"
+ },
+ {
+  "w": "おにぎり",
+  "kanji": "",
+  "ko": "주먹밥",
+  "unit": 3,
+  "page": 52,
+  "src": "index",
+  "kind": "word",
+  "id": "w272"
+ },
+ {
+  "w": "～たら",
+  "kanji": "",
+  "ko": "~하면",
+  "unit": 3,
+  "page": 52,
+  "src": "index",
+  "kind": "grammar",
+  "id": "w273"
+ },
+ {
+  "w": "うどん",
+  "kanji": "",
+  "ko": "우동",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w274"
+ },
+ {
+  "w": "うめぼし",
+  "kanji": "",
+  "ko": "우메보시, 매실절임",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w275"
+ },
+ {
+  "w": "おでん",
+  "kanji": "",
+  "ko": "오뎅",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w276"
+ },
+ {
+  "w": "ごはん",
+  "kanji": "ご飯",
+  "ko": "밥",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w277"
+ },
+ {
+  "w": "しお",
+  "kanji": "塩",
+  "ko": "소금",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w278"
+ },
+ {
+  "w": "しょうゆ",
+  "kanji": "",
+  "ko": "간장",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w279"
+ },
+ {
+  "w": "たこやき",
+  "kanji": "",
+  "ko": "다코야키, 문어빵",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w280"
+ },
+ {
+  "w": "やきそば",
+  "kanji": "",
+  "ko": "야키소바",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w281"
+ },
+ {
+  "w": "りんご",
+  "kanji": "",
+  "ko": "사과",
+  "unit": 3,
+  "page": 53,
+  "src": "index",
+  "kind": "word",
+  "id": "w282"
+ },
+ {
+  "w": "おかえり",
+  "kanji": "",
+  "ko": "어서 와",
+  "unit": 3,
+  "page": 54,
+  "src": "index",
+  "kind": "word",
+  "id": "w283"
+ },
+ {
+  "w": "おかえりなさい",
+  "kanji": "",
+  "ko": "어서 오세요",
+  "unit": 3,
+  "page": 54,
+  "src": "index",
+  "kind": "word",
+  "id": "w284"
+ },
+ {
+  "w": "おみやげ",
+  "kanji": "お土産",
+  "ko": "기념 선물",
+  "unit": 3,
+  "page": 54,
+  "src": "index",
+  "kind": "word",
+  "id": "w285"
+ },
+ {
+  "w": "ただいま",
+  "kanji": "",
+  "ko": "다녀왔습니다",
+  "unit": 3,
+  "page": 54,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w286"
+ },
+ {
+  "w": "アイドル",
+  "kanji": "",
+  "ko": "아이돌",
+  "unit": 3,
+  "page": 55,
+  "src": "index",
+  "kind": "word",
+  "id": "w287"
+ },
+ {
+  "w": "きのう",
+  "kanji": "昨日",
+  "ko": "어제",
+  "unit": 3,
+  "page": 55,
+  "src": "index",
+  "kind": "word",
+  "id": "w288"
+ },
+ {
+  "w": "いってきます",
+  "kanji": "",
+  "ko": "다녀오겠습니다",
+  "unit": 3,
+  "page": 57,
+  "src": "index",
+  "kind": "phrase",
+  "id": "w289"
+ },
+ {
+  "w": "ええ",
+  "kanji": "",
+  "ko": "네",
+  "unit": 3,
+  "page": 57,
+  "src": "index",
+  "kind": "word",
+  "id": "w290"
+ },
+ {
+  "w": "テニス",
+  "kanji": "",
+  "ko": "테니스",
+  "unit": 3,
+  "page": 57,
+  "src": "index",
+  "kind": "word",
+  "id": "w291"
+ },
+ {
+  "w": "まあ",
+  "kanji": "",
+  "ko": "뭐",
+  "unit": 3,
+  "page": 57,
+  "src": "index",
+  "kind": "word",
+  "id": "w292"
+ }
+]

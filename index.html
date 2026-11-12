@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>단어로 찾는 켄시 노래</title>
+<meta name="description" content="일본어 회화 교과서 1~3단원 단어가 가사에 나오는 米津玄師·ハチ의 노래를 조회수순으로 찾아봅니다.">
+<meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23b3402a'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='%23f4efe6' font-family='serif'%3E歌%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="kicker">日本語会話 1–3課 × 米津玄師 · ハチ</p>
+    <h1>단어로 찾는 <span class="vermilion">켄시</span> 노래</h1>
+    <p class="lede">교과서에서 배운 단어를 검색하면, 그 단어가 가사에 나오는 노래를 <b>조회수 순</b>으로 보여줍니다.</p>
+
+    <form class="search" id="searchForm" role="search" autocomplete="off">
+      <label class="sr" for="q">단어 검색</label>
+      <input id="q" type="search" inputmode="search" enterkeyhint="search" placeholder="うたう · 歌 · utau · 노래" spellcheck="false" autocapitalize="off">
+      <button type="submit" aria-label="검색">검색</button>
+    </form>
+    <p class="hint" id="hint">히라가나 · 한자 · 로마자 · 한국어 뜻 모두 됩니다</p>
+  </div>
+</header>
+
+<nav class="tabs wrap" aria-label="보기">
+  <button class="tab on" data-tab="search" type="button">검색</button>
+  <button class="tab" data-tab="book" type="button">단어장</button>
+  <span class="spacer"></span>
+  <div class="units" id="unitChips" role="group" aria-label="단원">
+    <button class="chip on" data-unit="0" type="button">전체</button>
+    <button class="chip" data-unit="1" type="button">1과</button>
+    <button class="chip" data-unit="2" type="button">2과</button>
+    <button class="chip" data-unit="3" type="button">3과</button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div id="banner" class="banner" hidden></div>
+  <div id="error" class="error" hidden></div>
+
+  <section id="viewSearch">
+    <div id="suggest" class="suggest"></div>
+    <article id="result" class="result" hidden></article>
+    <div id="empty" class="empty">
+      <p class="big">찾고 싶은 단어를 입력해 보세요</p>
+      <p>또는 <button type="button" class="linkbtn" data-goto="book">단어장</button>에서 단어를 골라도 됩니다.</p>
+    </div>
+  </section>
+
+  <section id="viewBook" hidden>
+    <label class="check"><input type="checkbox" id="showGrammar"> 조사·어미·접사도 보기 <small>(가사 검색에서는 제외됩니다)</small></label>
+    <div id="bookList"></div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <p>가사 속 단어는 <b>표기와 활용형 규칙으로 자동 분석</b>한 결과라 틀릴 수 있습니다. 짧은 가나 단어(する·ある 등)는 다른 단어 속에서도 잡히고, 一·いく처럼 짧은 단어는 한자 표기만 집계합니다.</p>
+  <p id="stamp"></p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
